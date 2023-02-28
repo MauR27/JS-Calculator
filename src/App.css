@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #efeffb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* BOX CONTAINER  */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#box-container {
+  height: 480px;
+  width: 350px;
+  border: solid black 2px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #2e2e2e;
+}
+
+/* BOX DISPLAY, MUESTRA EL TEXTO EN PANTALLA */
+
+#display-box {
+  margin-top: 5px;
+  height: 100px;
+  width: 340px;
+  border: solid white 1px;
+  border-radius: 5px;
+}
+
+/* BUTTON BOX */
+
+#buttons-box {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  height: 380px;
+  width: 330px;
+  border: solid white 1px;
+  border-radius: 5px;
+  display: grid;
+  padding: 5px 5px;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* BOTONES  */
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.zero,
+.clear,
+.add,
+.subtract,
+.multiply,
+.divide,
+.decimal,
+.equals {
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 5px;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.one:hover,
+.two:hover,
+.three:hover,
+.four:hover,
+.five:hover,
+.six:hover,
+.seven:hover,
+.eight:hover,
+.nine:hover,
+.add:hover,
+.subtract:hover,
+.multiply:hover,
+.divide:hover,
+.zero:hover,
+.decimal:hover {
+  background-color: #d8d8d8;
+  border: none;
+}
+
+.clear {
+  grid-column: 4;
+  grid-row: 2 / 4;
+  background-color: #faac58;
+}
+
+.clear:hover {
+  background-color: #fe9a2e;
   color: white;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.equals {
+  grid-column: 4;
+  grid-row: 4 / 6;
+  background-color: #bca9f5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.equals:hover {
+  background-color: #9f81f7;
+  color: white;
+  border: none;
+}
+
+.zero {
+  grid-column: 1 / 3;
+  grid-row: 5;
 }
