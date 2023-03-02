@@ -3,12 +3,16 @@ import React, { useState, useEffect } from "react";
 import { evaluate } from "mathjs";
 
 function App() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(0);
 
   function onClickSigns(e) {
-    setInput((prev) => prev + e.target.value);
+    if (input === 0) {
+      setInput(e.target.value);
+    } else {
+      setInput((prev) => prev + e.target.value);
+    }
   }
-  // console.log(input);
+  console.log(input);
 
   function result() {
     if (input) {
@@ -17,7 +21,7 @@ function App() {
   }
 
   function clear() {
-    return setInput("");
+    setInput(0);
   }
 
   // RETURN RENDER
@@ -26,7 +30,6 @@ function App() {
       <div id="box-container">
         <div id="display-box">
           <h2>{input}</h2>
-          {/* <h4>{textSigns}</h4> */}
         </div>
         <div id="buttons-box">
           <button className="add" id="buttons" onClick={onClickSigns} value="+">
